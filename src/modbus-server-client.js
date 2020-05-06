@@ -1,6 +1,6 @@
 'use strict'
 
-const debug = require('debug')('modbus tcp client socket')
+const debug = require('debug')('modbus tcp/udp client socket')
 const RequestHandler = require('./modbus-server-request-handler.js')
 const ResponseHandler = require('./modbus-server-response-handler.js')
 

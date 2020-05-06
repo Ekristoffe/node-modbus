@@ -1,7 +1,7 @@
 {
   "name": "jsmodbus",
   "version": "3.1.4",
-  "description": "Implementation for the Serial/TCP/UDP Modbus protocol.",
+  "description": "Implementation for the Serial/TCP Modbus protocol.",
   "author": "Stefan Poeter <stefan.poeter@cloud-automation.de>",
   "main": "./src/modbus.js",
   "repository": {
@@ -16,8 +16,8 @@
     "debug": "^3.1.0"
   },
   "devDependencies": {
-    "mocha": "^7.1.1",
-    "nyc": "^15.0.1",
+    "mocha": "^3.3.0",
+    "nyc": "^13.1.0",
     "sinon": "2.2.0",
     "standard": "^8.5.0"
   },
@@ -33,8 +33,7 @@
     "serial",
     "port",
     "modbus",
-    "tcp",
-    "udp"
+    "tcp"
   ],
   "readmeFilename": "README.md",
   "directories": {

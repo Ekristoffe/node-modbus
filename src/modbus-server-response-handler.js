@@ -1,6 +1,6 @@
 'use strict'
 
-const debug = require('debug')('modbus tcp response handler')
+const debug = require('debug')('modbus tcp/udp response handler')
 
 class ModbusServerResponseHandler {
   constructor (server, Response) {

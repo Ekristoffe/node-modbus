@@ -1,16 +1,15 @@
 'use strict'
 
-const modbus = require('../..')
-const net = require('net')
-const socket = new net.Socket()
+const modbus = require('../../')
+const dgram = require('dgram')
+const socket = new dgram.Socket()
 const options = {
   'host': '192.168.1.163',
   'port': '502'
 }
-const client = new modbus.client.TCP(socket)
-
+const client = new modbus.client.UDP(socket)
 socket.on('connect', function () {
-  client.writeSingleCoil(1, true)
+  client.readDiscreteInputs(0, 12)
     .then(function (resp) {
       console.log(resp)
       socket.end()

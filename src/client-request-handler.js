@@ -13,7 +13,7 @@ const ExceptionResponseBody = require('./response/exception.js')
  */
 class ModbusClientRequestHandler {
   /** Create a new Request handler for Client requests
-   * @param {net.Socket} socket A net.Socket object.
+   * @param {dgram.Socket} socket A dgram.Socket object.
    * @param {Number} timeout The request timeout value in ms.
    */
   constructor (socket, timeout) {
@@ -69,8 +69,9 @@ class ModbusClientRequestHandler {
     return userRequest.promise
   }
 
-  /** Handle a ModbusTCPResponse object.
+  /** Handle a ModbusTCPResponse or a ModbusUDPResponse object.
    * @param {ModbusTCPResponse} response A Modbus TCP Response.
+   * @param {ModbusUDPResponse} response A Modbus UDP Response.
    */
   handle (response) {
     debug('incoming response')

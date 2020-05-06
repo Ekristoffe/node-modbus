@@ -1,13 +1,15 @@
 'use strict'
 
 const modbus = require('../..')
-const net = require('net')
-const socket = new net.Socket()
+const dgram = require('dgram')
+const socket = new dgram.Socket('udp4')
 const options = {
-  'host': '192.168.1.163',
+  'address': '192.168.1.163',
   'port': '502'
 }
-const client = new modbus.client.TCP(socket)
+const port = 502
+const address = '192.168.1.163'
+const client = new modbus.client.UDP(socket)
 
 socket.on('connect', function () {
   client.writeSingleCoil(1, true)
@@ -21,4 +23,4 @@ socket.on('connect', function () {
 })
 
 socket.on('error', console.error)
-socket.connect(options)
+socket.connect(port, address)
